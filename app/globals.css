@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: 'Sour Gummy', 'Trebuchet MS', sans-serif;
+  @apply min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(244,172,183,0.25),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(205,220,223,0.3),_transparent_40%)] bg-[#fdf9f7] text-slate-800 antialiased transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-[radial-gradient(circle_at_top_left,_rgba(67,56,202,0.2),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.45),_transparent_40%)] bg-slate-950 text-slate-100;
+}
+
+::selection {
+  @apply bg-[#F4ACB7] text-slate-900;
+}
+
+@layer components {
+  .soft-card {
+    @apply rounded-[24px] border border-white/60 bg-white/70 shadow-soft backdrop-blur-xl;
+  }
+
+  .soft-card-dark {
+    @apply rounded-[24px] border border-slate-800/60 bg-slate-900/70 shadow-soft backdrop-blur-xl;
+  }
+
+  .glass-pill {
+    @apply rounded-full border border-white/60 bg-white/70 px-3 py-1 text-sm font-medium text-slate-700 backdrop-blur-xl;
+  }
+
+  .dark .glass-pill {
+    @apply border-slate-800/60 bg-slate-900/70 text-slate-200;
+  }
+}
